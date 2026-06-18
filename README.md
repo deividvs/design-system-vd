@@ -1,107 +1,98 @@
-# Handoff: Victor Darido — Link na Bio (link-in-bio)
+# Design System — Victor Darido + Link na Bio
 
-## Overview
-A mobile-first **link-in-bio** page for Victor Darido (cattle-ranching educator / SGF software brand). A centered single column on a dark "forest" background: avatar + name + two value-claim chips + bio + social row, a stack of **7 product link cards**, an **expandable team card**, an **"about" section** with portrait, and a footer with the brand watermark.
+Design system da marca **Victor Darido** (educação em pecuária / software SGF) e a página **link-in-bio** construída a partir dele.
 
-## About the Design Files
-The files in this bundle are **design references created in HTML** — a working prototype showing the intended look and behavior, **not production code to copy verbatim**. The task is to **recreate this design in the target codebase's environment** (React/Next, Vue, Astro, plain HTML, etc.) using its established patterns. If there is no codebase yet, pick the most appropriate framework (a single static page or a small React/Next app are both fine — this is a static marketing page with light interactivity).
-
-`Link na Bio.html` is fully self-contained and runnable — open it in a browser to see the target exactly. All CSS is in the `<style>` block; design tokens come from `styles.css` → `tokens/*`.
-
-## Fidelity
-**High-fidelity (hifi).** Final colors, typography, spacing, icons and interactions. Recreate pixel-faithfully using the tokens below. The brand system (`design-system/`) is the source of truth for color/type/spacing.
+🔗 Repositório: https://github.com/deividvs/design-system-vd
 
 ---
 
-## Screen: Link na Bio
+## O que tem aqui
 
-Single scrolling page, centered column **max-width 480px**, side padding **22px**, top padding **56px**. Everything sits above two fixed background layers (see Background).
-
-### Layout (top → bottom)
-1. **Avatar** — 104×104 circle, 4px gradient ring (`amber-400 → forest-500`), forest glow shadow. Photo `assets/images/victor-darido-foto.jpg`. (In the prototype this is a drag-to-replace `<image-slot>`; in production just use a plain `<img>` circle-cropped.)
-2. **Name** — "Victor Darido", display font 28px/800, letter-spacing -.02em, white.
-3. **Handle** — "@victordarido", 14px/600, color `forest-400`.
-4. **Claim chips** (full-width column, gap 9px, margin-top 18px) — two rounded rows, fill `rgba(255,255,255,.05)`, border `rgba(255,255,255,.1)`, radius 10px, padding 11×18px, text 14.5px/500 `rgba(255,255,255,.9)`, left-aligned, emoji 18px:
-   - 💰 Ajudo você a ganhar mais dinheiro com a pecuária
-   - 🌎 + de **41.000** alunos em **18 países**  (bold spans in `amber-300`, `white-space:nowrap`)
-5. **Bio** — centered, 15px/1.6, `rgba(255,255,255,.62)`, max 34ch. Bold words ("empresa", "números") in near-white. Text: *"Pecuarista, empresário e educador. Ensino o produtor a tratar a fazenda como **empresa** e decidir com base em **números**."*
-6. **Social row** — 3 circular icon buttons (42px), Instagram / YouTube / WhatsApp. Fill `rgba(255,255,255,.06)`, border `rgba(255,255,255,.12)`, icon `rgba(255,255,255,.8)`. Hover: fill `.12`, lift `translateY(-2px)`, icon white.
-7. **Section label** "PRODUTOS" — 12px/600 uppercase, letter-spacing .16em, `rgba(255,255,255,.4)`, with a trailing hairline rule (`flex:1; height:1px; rgba(255,255,255,.08)`).
-8. **Product stack** — 7 link cards, gap 12px (see below).
-9. **Section label** "ATENDIMENTO" → **Team card** (expandable).
-10. **Section label** "SOBRE" → **About card**.
-11. **Footer** — centered watermark image `assets/images/victor-darido-marca.png` (width 188px) + line "© 2026 · Pecuária Lucrativa · Todos os direitos reservados." (12px, `rgba(255,255,255,.35)`).
-
-### Component: Product link card (`.link-card`)
-Anchor `<a>`, flex row, gap 16px, padding 16×18px, radius 16px.
-- Fill `rgba(255,255,255,.04)`, border `1px rgba(255,255,255,.09)`, `backdrop-filter: blur(12px)`.
-- **Icon** (`.lc-icon`) 46×46, radius 10px, fill `rgba(14,159,110,.14)`, icon color `forest-300`, 23px Lucide-style line icon (stroke 2, round caps).
-- **Body**: name = display 17px/700 (white); description = 13px/1.45 `rgba(255,255,255,.55)`.
-- **Chevron** (`.lc-chev`) right-pointing, `rgba(255,255,255,.4)`.
-- **Hover**: fill `.08`, border `.18`, `translateY(-2px)`, box-shadow forest glow; chevron shifts right 3px and turns `forest-400`.
-- **Featured variant** (`.feat`, used on T.R.I. 2.0): fill `linear-gradient(135deg, rgba(212,160,23,.14), rgba(14,159,110,.10))`, border `rgba(232,185,49,.3)`; icon fill becomes amber gradient with `forest-950` glyph; hover shadow is amber.
-
-The 7 products, in order — **name → description → icon (Lucide name)**:
-1. **SGF — Sistema de Gestão** → "Essa é a calculadora do boiadeiro. Faça as contas direto no aplicativo." → `calculator`. Links to `https://sistema.victordarido.com.br`.
-2. **T.R.I. 2.0** *(featured + amber pill "Mais procurado")* → "O mapa para começar na pecuária do jeito certo, evitando os erros que fazem muitos perderem dinheiro." → `map`.
-3. **Engorda Flexível** → "Aumente a margem com as estratégias de terminação de gado padrão exportação." → `trending-up`.
-4. **Manual do Boiadeiro** → "Conheça o protocolo de entrada dos animais: o que fazer da porteira pra dentro." → `clipboard-list`.
-5. **Gado Lucrativo** → "Aprenda a construir margem de lucro na compra e na venda dos animais." → `coins`.
-6. **Jornada Pecuária Lucrativa** *(green pill "+ Protocolo SDR")* → "Faça seu gado parar de perder peso aplicando o Protocolo SDR." → `scale`.
-7. **Mentoria Esteio** → "Acompanhamento estratégico para outro nível de gestão." → `target`.
-
-Pills: `.pill-hot` = amber-400 bg, forest-950 text, 9.5px/700 uppercase, radius full. `.pill-sdr` = `rgba(14,159,110,.16)` bg, `forest-300` text, 11px/700, hairline forest border.
-
-### Component: Team card (`.team`, expandable)
-A `.link-card` header ("Falar com o time", icon `users`, subtitle "Deivid · Sabrina · Victor Hugo · Rodrigo · Camila · Matheus", **down-chevron**). Clicking toggles `.open`: chevron rotates 180°, and a panel below expands (animate `max-height` over .4s `ease-out`, set via JS to the content's scrollHeight). Panel contains 6 member rows (`.member`): 38px circular monogram (initials, per-member forest/amber gradient), name (15px/600), and a "Falar" CTA (`forest-400`) with a WhatsApp icon. Each member links to a contact URL (placeholders `#` — wire real WhatsApp links).
-
-### Component: About card (`.about`)
-Full-width rounded panel (radius 24px, glass fill). Top: **photo stage** (height 250px) with the cutout portrait `assets/images/victor-darido-retrato.png` (`object-fit: contain`, bottom-aligned) over a forest radial glow. Below: heading "Quem é Victor Darido?" (display 23px/700) and 3 paragraphs (14.5px/1.7, `rgba(255,255,255,.68)`; "12 animais" bold in `amber-300`).
+| Item | Descrição |
+|------|-----------|
+| **`index.html`** | A página link-in-bio em produção — HTML estático, animada com GSAP + Motion. |
+| **`styles.css` + `tokens/`** | Design tokens (cores, tipografia, espaçamento, fontes). É a fonte da verdade do visual. |
+| **`design-system/`** | Brand guide, resumo (`SKILL.md`) e componentes React reutilizáveis (Button, Card, Tag, IconBadge, Input). |
+| **`assets/`** | Fontes self-hosted (woff2) e imagens (foto, retrato, marca). |
+| **`Link na Bio.html`** | Protótipo de referência original (sem libs de animação). |
 
 ---
 
-## Interactions & Behavior
-- **Hover** on cards/social: lift + brighten + shadow (transitions ~.2–.25s, `ease-out`; press uses `ease-spring`).
-- **Team accordion**: click or Enter/Space on the header toggles `.open` and sets `panel.style.maxHeight = open ? scrollHeight+'px' : '0'`. `aria-expanded` reflects state.
-- **No entrance animation** is used (kept off for reliability) — visible state is the base. If you add one, gate it so content is never left hidden.
-- **Responsive**: single column already; just keep `max-width:480px; margin:0 auto`. Works down to ~320px.
-- All product/social/member links are placeholders except SGF — replace `href="#"` with real URLs.
+## A página Link na Bio
 
-## State Management
-Minimal. Only one piece of UI state: **team panel open/closed** (boolean). Everything else is static content — ideal to drive product cards and team members from small data arrays (see the `TEAM` array and product list in the HTML).
+Página mobile-first, coluna única centralizada (máx. 480px) sobre fundo "forest" escuro. De cima para baixo: avatar + nome + chips de valor + bio + redes sociais, uma pilha de **7 cards de produto**, um **card de time expansível**, uma **seção "sobre"** e o rodapé com a marca.
 
-## Design Tokens
-Authoritative source: `styles.css` → `tokens/colors.css`, `typography.css`, `spacing.css`, `fonts.css`. Key values used on this page:
+### Animação
 
-**Color**
-- Forest: `--forest-950 #021A0E` (page ground), `--forest-500 #16B87E`, `--forest-400 #3DDBA0`, `--forest-300 #7AEBC4`.
-- Amber: `--amber-400 #E8B931`, `--amber-500 #D4A017`, `--amber-300 #F5D062`.
-- Background glows: `radial-gradient(... rgba(14,159,110,.22))` (forest) + `rgba(212,160,23,.07)` (amber); dot grid `radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px)` at 30px.
-- On-dark text: white, `rgba(255,255,255,.9 / .68 / .62 / .55 / .4 / .35)`.
+Construída com **duas bibliotecas**, cada uma no que faz de melhor:
 
-**Type** — `--font-display: 'Bricolage Grotesque'` (headings/names, 700–800, tight tracking), `--font-body: 'Source Sans 3'` (body), `--font-mono: 'DM Mono'` (numbers). Fonts are self-hosted in `assets/fonts/` (see `tokens/fonts.css` `@font-face`).
+**[GSAP](https://gsap.com/)** + ScrollTrigger
+- Timeline de entrada do header (avatar com `back.out`, nome → handle → chips → bio → redes em stagger).
+- Reveals on-scroll para tudo abaixo da dobra (cards, labels, sobre, rodapé).
+- Parallax sutil no grid de pontos do fundo e no retrato da seção "sobre".
+- Float contínuo no avatar.
 
-**Radius** — `--radius-md 10px` (chips/icon tiles), `--radius-lg 16px` (cards), `--radius-xl 24px` (about/team panel), `--radius-full` (avatar, pills, social).
+**[Motion / motion.dev](https://motion.dev/)**
+- Acordeão do time com `height` por spring + rotação do chevron.
+- Gestos `hover`/`press` nos cards, membros e redes (lift + scale com spring).
+- Pulso em loop no selo "Mais procurado".
 
-**Shadow / motion** — `--shadow-glow: 0 0 48px rgba(14,159,110,.15)`, `--shadow-amber: 0 0 48px rgba(212,160,23,.12)`; `--ease-out: cubic-bezier(.16,1,.3,1)`, `--ease-spring: cubic-bezier(.34,1.56,.64,1)`.
+### Acessibilidade & robustez
+- Respeita `prefers-reduced-motion`: animações desligam e o conteúdo aparece estático.
+- O conteúdo **nunca fica escondido** se o JS falhar — os estados iniciais só são aplicados quando o JS está ativo.
+- Acordeão com `aria-expanded`/`aria-controls` e suporte a teclado (Enter/Espaço).
 
-## Iconography
-**Lucide** line icons (24×24, `fill:none`, `stroke:currentColor`, `stroke-width:2`, round caps) — the prototype hand-inlines the paths, but you can `npm i lucide` / use `lucide-react`. Icons per product listed above. No emoji in icons; the two claim chips intentionally use 💰 and 🌎 emoji.
+### Produtos e links
 
-## Assets (in `assets/`)
-- `images/victor-darido-foto.jpg` — avatar (cowboy-hat photo).
-- `images/victor-darido-retrato.png` — about-section cutout portrait (transparent PNG).
-- `images/victor-darido-marca.png` — footer watermark wordmark (transparent PNG, includes verified badge).
-- `fonts/` — Bricolage Grotesque, Source Sans 3, DM Mono (woff2).
+| Produto | Link |
+|---------|------|
+| SGF — Sistema de Gestão | https://sistema.victordarido.com.br |
+| T.R.I. 2.0 *(mais procurado)* | https://lp.victordarido.com.br/ |
+| Engorda Flexível | checkout Hotmart |
+| Manual do Boiadeiro | checkout Hotmart |
+| Gado Lucrativo | checkout Hotmart |
+| Jornada Pecuária Lucrativa *(+ Protocolo SDR)* | http://lp.victordarido.com.br/inscricoes-encerradas |
+| Mentoria Esteio | https://sl.victordarido.com.br/bio-esteio |
 
-## Files
-- `Link na Bio.html` — the runnable prototype (all layout + styles + JS).
-- `styles.css`, `tokens/*.css` — design tokens (link `styles.css`, it `@import`s the rest).
-- `image-slot.js` — only powers the prototype's drag-to-replace avatar; **not needed in production** (use a plain `<img>`).
-- `design-system/BRAND_GUIDE.md` — full brand voice + visual foundations (Portuguese copy rules, tone, color/type system).
-- `design-system/SKILL.md` — brand summary.
-- `design-system/components/` — the brand's reusable React primitives (`Button`, `Card`, `Tag`, `IconBadge`, `Input`) with `.d.ts` + `.prompt.md`. Use these patterns if building in React.
+> Os links das redes sociais e dos membros do time ainda são placeholders (`#`) — substituir antes de publicar.
 
-## Notes
-- Copy is **Brazilian Portuguese**, plain and direct. Headlines sentence-case; only eyebrow labels and CTAs are UPPERCASE. Numbers (41.000, 18, 12) are emphasized — keep them prominent.
-- Replace all placeholder `#` links with real product / WhatsApp URLs before shipping.
+---
+
+## Como rodar
+
+A página usa módulos ESM (a lib do Motion vem por `import` de CDN), então abrir via `file://` pode ser bloqueado por CORS em alguns navegadores. Sirva por HTTP:
+
+```bash
+python3 -m http.server 8000
+```
+
+Depois abra **http://localhost:8000/index.html**.
+
+> O GSAP funciona mesmo via `file://`; só os gestos/acordeão do Motion precisam do servidor.
+
+---
+
+## Design tokens (resumo)
+
+**Cores** — Forest (verde, primária): `--forest-950 #021A0E` (fundo) … `--forest-400 #3DDBA0` (acentos). Amber (destaque/"dinheiro"): `--amber-400 #E8B931`, `--amber-300 #F5D062`.
+
+**Tipografia** — `--font-display` Bricolage Grotesque (títulos/nomes), `--font-body` Source Sans 3 (corpo), `--font-mono` DM Mono (números). Self-hosted em `assets/fonts/`.
+
+**Raios** — `--radius-md 10px`, `--radius-lg 16px`, `--radius-xl 24px`, `--radius-full`.
+
+**Motion** — `--ease-out: cubic-bezier(.16,1,.3,1)`, `--ease-spring: cubic-bezier(.34,1.56,.64,1)`.
+
+Detalhes completos em `tokens/*.css` e `design-system/BRAND_GUIDE.md`.
+
+---
+
+## Stack
+
+- HTML/CSS estático (sem build).
+- [GSAP 3.12](https://gsap.com/) + ScrollTrigger (via CDN).
+- [Motion 12](https://motion.dev/) (ESM via CDN).
+- Tokens em CSS custom properties.
+
+---
+
+© 2026 · Pecuária Lucrativa · Todos os direitos reservados.
