@@ -1,0 +1,343 @@
+<!-- @dsCard group="Link na Bio" viewport="460x880" name="Link na Bio — Victor Darido" subtitle="Bio-link com todos os produtos + time" -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Darido — Links</title>
+<link rel="stylesheet" href="styles.css">
+<script src="image-slot.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: var(--font-body);
+    color: #fff;
+    background: var(--forest-950);
+    background-image:
+      radial-gradient(ellipse 60% 40% at 75% 8%, rgba(14,159,110,.22) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 15% 95%, rgba(212,160,23,.07) 0%, transparent 55%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .dots {
+    position: fixed; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 30px 30px; pointer-events: none; z-index: 0;
+  }
+  .wrap {
+    position: relative; z-index: 1;
+    max-width: 480px; margin: 0 auto;
+    padding: 56px 22px 44px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  /* ── Header ─────────────────────────────── */
+  .avatar-ring {
+    padding: 4px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--amber-400), var(--forest-500));
+    box-shadow: var(--shadow-glow);
+  }
+  image-slot {
+    width: 104px; height: 104px; display: block;
+    border: 3px solid var(--forest-950);
+    border-radius: 50%; overflow: hidden;
+    background: var(--forest-900);
+    color: var(--forest-300);
+  }
+  .name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 28px; letter-spacing: -.02em; margin: 18px 0 2px;
+  }
+  .handle { font-size: 14px; color: var(--forest-400); font-weight: 600; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-top: 16px; padding: 7px 16px; border-radius: var(--radius-full);
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .14em;
+    color: var(--forest-400); background: rgba(14,159,110,.1); border: 1px solid rgba(14,159,110,.25);
+  }
+  .claims { margin-top: 18px; align-self: stretch; display: flex; flex-direction: column; gap: 9px; }
+  .claim {
+    display: flex; align-items: center; gap: 11px;
+    padding: 11px 18px; border-radius: var(--radius-md);
+    font-size: 14.5px; font-weight: 500; line-height: 1.35; text-align: left;
+    color: rgba(255,255,255,.9);
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  }
+  .claim b { font-weight: 700; color: var(--amber-300); white-space: nowrap; }
+  .claim-emoji { font-size: 18px; flex-shrink: 0; line-height: 1; }
+  .bio {
+    margin: 18px 0 0; text-align: center; max-width: 34ch;
+    font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.62);
+  }
+  .bio b { color: rgba(255,255,255,.92); font-weight: 600; }
+
+  /* ── Social row ─────────────────────────── */
+  .social { display: flex; gap: 10px; margin-top: 22px; }
+  .social a {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,.8);
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+    transition: background .2s var(--ease-out), border-color .2s, transform .15s var(--ease-spring), color .2s;
+  }
+  .social a:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.25); color: #fff; transform: translateY(-2px); }
+  .social svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── Section label ──────────────────────── */
+  .sec-label {
+    align-self: stretch; display: flex; align-items: center; gap: 12px;
+    margin: 38px 2px 14px; font-size: 12px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .16em; color: rgba(255,255,255,.4);
+  }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.08); }
+
+  /* ── Link stack ─────────────────────────── */
+  .stack { align-self: stretch; display: flex; flex-direction: column; gap: 12px; }
+
+  .link-card {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 18px; text-decoration: none; color: inherit;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
+    border-radius: var(--radius-lg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    transition: background .25s var(--ease-out), border-color .25s, transform .18s var(--ease-spring), box-shadow .25s;
+  }
+  .link-card:hover {
+    background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18);
+    transform: translateY(-2px); box-shadow: var(--shadow-glow);
+  }
+  .lc-icon {
+    width: 46px; height: 46px; flex-shrink: 0; border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(14,159,110,.14); color: var(--forest-300);
+  }
+  .lc-icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .lc-body { flex: 1; min-width: 0; }
+  .lc-name { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .lc-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.45; margin-top: 3px; }
+  .lc-chev { flex-shrink: 0; color: rgba(255,255,255,.4); transition: transform .2s var(--ease-out), color .2s; }
+  .lc-chev svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; }
+  .link-card:hover .lc-chev { color: var(--forest-400); transform: translateX(3px); }
+
+  .pill-hot { font-family: var(--font-body); font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; color: var(--forest-950); background: var(--amber-400); padding: 3px 9px; border-radius: var(--radius-full); white-space: nowrap; }
+  .pill-sdr { font-family: var(--font-body); font-size: 11px; font-weight: 700; color: var(--forest-300); background: rgba(14,159,110,.16); border: 1px solid rgba(14,159,110,.3); padding: 2px 8px; border-radius: var(--radius-full); white-space: nowrap; }
+
+  /* Featured (SGF) */
+  .link-card.feat { background: linear-gradient(135deg, rgba(212,160,23,.14), rgba(14,159,110,.10)); border-color: rgba(232,185,49,.3); }
+  .link-card.feat .lc-icon { background: linear-gradient(135deg, var(--amber-400), var(--amber-500)); color: var(--forest-950); }
+  .link-card.feat:hover { box-shadow: var(--shadow-amber); border-color: rgba(232,185,49,.5); }
+
+  /* ── Team (expandable) ──────────────────── */
+  .team { align-self: stretch; }
+  .team-head { width: 100%; cursor: pointer; }
+  .team-head .lc-icon { background: rgba(255,255,255,.08); color: #fff; }
+  .team.open .team-head .lc-chev { transform: rotate(180deg); color: var(--forest-400); }
+  .team-panel { overflow: hidden; max-height: 0; transition: max-height .4s var(--ease-out); }
+  .team.open .team-panel { max-height: 560px; }
+  .team-grid { display: flex; flex-direction: column; gap: 8px; padding: 12px 0 2px; }
+  .member {
+    display: flex; align-items: center; gap: 13px;
+    padding: 11px 14px; text-decoration: none; color: inherit;
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+    border-radius: var(--radius-md);
+    transition: background .2s, border-color .2s;
+  }
+  .member:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.16); }
+  .mono {
+    width: 38px; height: 38px; flex-shrink: 0; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 14px; color: #fff;
+  }
+  .m-name { flex: 1; font-weight: 600; font-size: 15px; }
+  .m-cta { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--forest-400); }
+  .m-cta svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── Footer ─────────────────────────────── */
+  /* ── About ──────────────────────────────── */
+  .about {
+    align-self: stretch; margin-top: 14px;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
+    border-radius: var(--radius-xl); overflow: hidden;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  }
+  .about-photo {
+    height: 250px; display: flex; align-items: flex-end; justify-content: center;
+    background:
+      radial-gradient(ellipse 70% 78% at 50% 92%, rgba(14,159,110,.28) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 50% 30%, rgba(212,160,23,.06) 0%, transparent 60%);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .about-photo img { max-width: 92%; max-height: 100%; object-fit: contain; display: block; }
+  .about-copy { padding: 26px 26px 28px; }
+  .about-title { font-family: var(--font-display); font-weight: 700; font-size: 23px; letter-spacing: -.01em; color: #fff; margin: 0 0 14px; }
+  .about-copy p { font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,.68); margin: 0 0 12px; }
+  .about-copy p:last-child { margin-bottom: 0; }
+  .about-copy b { color: var(--amber-300); font-weight: 700; }
+
+  /* ── Footer ─────────────────────────────── */
+  .foot { margin-top: 40px; text-align: center; font-size: 12px; color: rgba(255,255,255,.35); line-height: 1.7; }
+  .foot-mark { width: 188px; height: auto; display: block; margin: 0 auto 14px; }
+  .foot .logo { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: rgba(255,255,255,.7); letter-spacing: -.02em; }
+  .foot .logo span { color: var(--amber-400); }
+</style>
+</head>
+<body>
+<div class="dots"></div>
+<main class="wrap">
+
+  <div class="avatar-ring">
+    <image-slot id="vd-avatar" shape="circle" src="assets/images/victor-darido-foto.jpg" placeholder="Foto do Victor"></image-slot>
+  </div>
+  <h1 class="name">Victor Darido</h1>
+  <div class="handle">@victordarido</div>
+  <div class="claims">
+    <div class="claim"><span class="claim-emoji">💰</span> Ajudo você a ganhar mais dinheiro com a pecuária</div>
+    <div class="claim"><span class="claim-emoji">🌎</span> + de <b>41.000</b> alunos em <b>18 países</b></div>
+  </div>
+  <p class="bio">Pecuarista, empresário e educador. Ensino o produtor a tratar a fazenda como <b>empresa</b> e decidir com base em <b>números</b>.</p>
+
+  <div class="social">
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 5 12 5 12 5h0s-4.2 0-7.1.2c-.4 0-1.3 0-2.1.9C2.2 6.6 2 8 2 8s-.2 1.6-.2 3.3v1.5C1.8 14.4 2 16 2 16s.2 1.4.8 2c.8.8 1.8.8 2.3.9 1.7.2 6.9.2 6.9.2s4.2 0 7.1-.2c.4 0 1.3 0 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.5C22.2 9.6 22 8 22 8z"/><polygon points="10 9 15 12 10 15 10 9"/></svg></a>
+    <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 8.8c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.5l-.4.5c-.1.1-.2.3-.1.5.2.4.6 1 1.1 1.5.6.5 1.1.7 1.5.9.2 0 .3 0 .5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.7c.2.1.4.2.4.4 0 .5-.2 1.2-.5 1.4-.3.2-1 .5-1.7.4-1-.1-2.4-.6-3.8-1.9-1.5-1.4-2-2.8-2.1-3.8 0-.6.1-1.2.5-1.7z"/></svg></a>
+  </div>
+
+  <div class="sec-label">Produtos</div>
+  <div class="stack" id="stack">
+
+    <a class="link-card" href="https://sistema.victordarido.com.br" target="_blank" rel="noopener" style="animation-delay:.04s">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">SGF — Sistema de Gestão</span>
+        <span class="lc-desc">Essa é a calculadora do boiadeiro. Faça as contas direto no aplicativo.</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
+    </a>
+
+    <a class="link-card feat" href="#" style="animation-delay:.10s">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">T.R.I. 2.0 <span class="pill-hot">Mais procurado</span></span>
+        <span class="lc-desc">O mapa para começar na pecuária do jeito certo, evitando os erros que fazem muitos perderem dinheiro.</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
+    </a>
+
+    <a class="link-card" href="#" style="animation-delay:.16s">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">Engorda Flexível</span>
+        <span class="lc-desc">Aumente a margem com as estratégias de terminação de gado padrão exportação.</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
+    </a>
+
+    <a class="link-card" href="#" style="animation-delay:.22s">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">Manual do Boiadeiro</span>
+        <span class="lc-desc">Conheça o protocolo de entrada dos animais: o que fazer da porteira pra dentro.</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
+    </a>
+
+    <a class="link-card" href="#" style="animation-delay:.28s">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">Gado Lucrativo</span>
+        <span class="lc-desc">Aprenda a construir margem de lucro na compra e na venda dos animais.</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
+    </a>
+
+    <a class="link-card" href="#" style="animation-delay:.34s">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-2 1.5-4 1.5-6 0"/><path d="m2 16 3-8 3 8c-2 1.5-4 1.5-6 0"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">Jornada Pecuária Lucrativa <span class="pill-sdr">+ Protocolo SDR</span></span>
+        <span class="lc-desc">Faça seu gado parar de perder peso aplicando o Protocolo SDR.</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
+    </a>
+
+    <a class="link-card" href="#" style="animation-delay:.40s">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">Mentoria Esteio</span>
+        <span class="lc-desc">Acompanhamento estratégico para outro nível de gestão.</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
+    </a>
+
+  </div>
+
+  <div class="sec-label">Atendimento</div>
+  <div class="team stack" id="team">
+    <div class="link-card team-head" style="animation-delay:.46s" role="button" tabindex="0" aria-expanded="false">
+      <span class="lc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <span class="lc-body">
+        <span class="lc-name">Falar com o time</span>
+        <span class="lc-desc">Deivid · Sabrina · Victor Hugo · Rodrigo · Camila · Matheus</span>
+      </span>
+      <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+    </div>
+    <div class="team-panel">
+      <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </div>
+
+  <div class="sec-label">Sobre</div>
+  <div class="about">
+    <div class="about-photo">
+      <img src="assets/images/victor-darido-retrato.png" alt="Victor Darido" />
+    </div>
+    <div class="about-copy">
+      <h2 class="about-title">Quem é Victor Darido?</h2>
+      <p>Victor Darido é pecuarista no interior de São Paulo. Formado em Administração, construiu uma carreira de sucesso que começou dez anos atrás, com <b>12 animais</b>.</p>
+      <p>Hoje, Victor se concentra no negócio que cresce ano a ano, além de ajudar outros pecuaristas com cursos, palestras e eBooks.</p>
+      <p>Com destaque nacional pela alta produtividade aliada ao bem-estar animal, este jovem tem muito conhecimento prático para passar.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <img class="foot-mark" src="assets/images/victor-darido-marca.png" alt="Victor Darido" />
+    © 2026 · Pecuária Lucrativa · Todos os direitos reservados.
+  </div>
+
+</main>
+
+<script>
+  // Team members — each gets a monogram color + a contact link (set real URLs here)
+  const TEAM = [
+    { name: 'Deivid',      url: '#', c1: '#0E9F6E', c2: '#064C34' },
+    { name: 'Sabrina',     url: '#', c1: '#E8B931', c2: '#B8860B' },
+    { name: 'Victor Hugo', url: '#', c1: '#16B87E', c2: '#0A7B54' },
+    { name: 'Rodrigo',     url: '#', c1: '#0E9F6E', c2: '#03261A' },
+    { name: 'Camila',      url: '#', c1: '#F5D062', c2: '#D4A017' },
+    { name: 'Matheus',     url: '#', c1: '#3DDBA0', c2: '#0E9F6E' },
+  ];
+  const initials = (n) => n.trim().split(/\s+/).map(w => w[0]).slice(0,2).join('').toUpperCase();
+  const grid = document.getElementById('teamGrid');
+  grid.innerHTML = TEAM.map(m => `
+    <a class="member" href="${m.url}"${m.url !== '#' ? ' target="_blank" rel="noopener"' : ''}>
+      <span class="mono" style="background:linear-gradient(135deg, ${m.c1}, ${m.c2})">${initials(m.name)}</span>
+      <span class="m-name">${m.name}</span>
+      <span class="m-cta">Falar
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      </span>
+    </a>`).join('');
+
+  const team = document.getElementById('team');
+  const head = team.querySelector('.team-head');
+  const panel = team.querySelector('.team-panel');
+  const grid2 = document.getElementById('teamGrid');
+  const toggle = () => {
+    const open = team.classList.toggle('open');
+    head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panel.style.maxHeight = open ? (grid2.scrollHeight + 8) + 'px' : '0px';
+  };
+  head.addEventListener('click', toggle);
+  head.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+</script>
+</body>
+</html>

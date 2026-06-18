@@ -1,0 +1,48 @@
+/* ─────────────────────────────────────────────────────────────
+   SPACING, RADII, SHADOWS, MOTION
+   8-based spacing rhythm · generous corner radii ·
+   warm-tinted soft shadows + colored "glow" shadows ·
+   two signature easings (smooth out + gentle spring).
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Spacing scale ────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* Section vertical rhythm (top/bottom padding of a block) */
+  --section-y: 96px;
+  --gutter:    24px;       /* page side padding */
+  --maxw:      1200px;     /* content container max-width */
+
+  /* ── Corner radii ─────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   10px;     /* buttons */
+  --radius-lg:   16px;     /* cards */
+  --radius-xl:   24px;     /* large panels */
+  --radius-full: 9999px;   /* pills, avatars */
+
+  /* ── Shadows (warm, tinted with earth-900) ────── */
+  --shadow-sm:    0 1px 3px rgba(28,25,23,.06);
+  --shadow-md:    0 4px 16px rgba(28,25,23,.08);
+  --shadow-lg:    0 12px 32px rgba(28,25,23,.12);
+  --shadow-xl:    0 24px 64px rgba(28,25,23,.16);
+  /* Colored glows — used on dark sections + hero imagery */
+  --shadow-glow:  0 0 48px rgba(14,159,110,.15);   /* forest */
+  --shadow-amber: 0 0 48px rgba(212,160,23,.12);   /* amber */
+
+  /* ── Motion ───────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+  --dur-fast:    0.15s; /* @kind other */
+  --dur-base:    0.3s;  /* @kind other */
+  --dur-slow:    0.7s;  /* @kind other */
+}

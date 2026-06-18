@@ -1,0 +1,75 @@
+/* ─────────────────────────────────────────────────────────────
+   COLORS — "Precision Agriculture" palette
+   Deep forest greens (primary) · warm amber (accent) ·
+   warm earth neutrals · cream/parchment backgrounds.
+   Base ramps + semantic aliases.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Forest — primary brand green ─────────────── */
+  --forest-950: #021A0E;   /* hero / footer backgrounds, deepest ink */
+  --forest-900: #03261A;
+  --forest-800: #064C34;
+  --forest-700: #0A7B54;
+  --forest-600: #0E9F6E;   /* primary action green */
+  --forest-500: #16B87E;
+  --forest-400: #3DDBA0;   /* accents on dark */
+  --forest-300: #7AEBC4;
+  --forest-100: #D1FAE5;
+  --forest-50:  #ECFDF5;
+
+  /* ── Amber — warm accent / "money" highlight ──── */
+  --amber-600: #B8860B;
+  --amber-500: #D4A017;    /* stars, key numbers */
+  --amber-400: #E8B931;    /* primary CTA gradient top, brand "." */
+  --amber-300: #F5D062;
+  --amber-100: #FEF3C7;
+  --amber-50:  #FFFBEB;
+
+  /* ── Earth — warm neutral ramp (text + UI) ────── */
+  --earth-900: #1C1917;
+  --earth-800: #292524;    /* default body text */
+  --earth-700: #44403C;
+  --earth-600: #57534E;
+  --earth-500: #78716C;
+  --earth-400: #A8A29E;
+  --earth-300: #D6D3D1;
+  --earth-200: #E7E5E4;    /* hairline borders on light */
+  --earth-100: #F5F5F4;
+  --earth-50:  #FAFAF9;
+
+  /* ── Warm backgrounds ─────────────────────────── */
+  --cream:      #FAF8F3;   /* default page background */
+  --cream-dark: #F3EFE7;
+  --parchment:  #EDE8DB;
+
+  /* ── Semantic base ────────────────────────────── */
+  --danger:        #B91C1C;
+  --danger-bg:     #FEF2F2;
+  --danger-border: #FECACA;
+  --white:         #FFFFFF;
+  --black:         #021A0E;
+
+  /* ── Semantic aliases (use these in product UI) ─ */
+  --bg-page:        var(--cream);
+  --bg-page-dark:   var(--forest-950);
+  --surface-card:   var(--white);
+  --surface-sunken: var(--earth-50);
+  --surface-dark:   rgba(255,255,255,.04);   /* glass card on dark */
+
+  --text-strong:    var(--earth-900);
+  --text-body:      var(--earth-800);
+  --text-muted:     var(--earth-500);
+  --text-faint:     var(--earth-400);
+  --text-on-dark:   rgba(255,255,255,.92);
+  --text-on-dark-muted: rgba(255,255,255,.65);
+
+  --border-hairline: var(--earth-200);
+  --border-on-dark:  rgba(255,255,255,.08);
+
+  --accent:         var(--forest-600);   /* primary action */
+  --accent-strong:  var(--forest-800);
+  --accent-on-dark: var(--forest-400);
+  --highlight:      var(--amber-400);    /* money / emphasis */
+  --highlight-ink:  var(--amber-500);
+}

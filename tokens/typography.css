@@ -1,0 +1,50 @@
+/* ─────────────────────────────────────────────────────────────
+   TYPOGRAPHY — families, weights, and the display type scale.
+   Display = Bricolage Grotesque (tight tracking, heavy weights)
+   Body    = Source Sans 3
+   Mono    = DM Mono — reserved for NUMBERS (stats, prices, %).
+   Scale mirrors the live product's .t-* utilities (px values).
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Families ─────────────────────────────────── */
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body:    'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-mono:    'DM Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* ── Weights ──────────────────────────────────── */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-heavy:    800;
+
+  /* ── Display scale (size / line-height / tracking) ── */
+  --text-display:  72px;   /* hero / page headline */
+  --text-h1:       48px;
+  --text-h2:       40px;
+  --text-h3:       32px;
+  --text-h4:       28px;
+  --text-h5:       24px;
+
+  --lh-display: 1.08; /* @kind other */
+  --lh-tight:   1.15; /* @kind other */
+  --lh-heading: 1.3;  /* @kind other */
+
+  --track-display: -0.035em;
+  --track-tight:   -0.025em;
+  --track-snug:    -0.02em;
+
+  /* ── Body scale ───────────────────────────────── */
+  --text-lead:  19px;   /* section intros / hero sub */
+  --text-base:  16px;   /* default body */
+  --text-sm:    14px;   /* nav, captions */
+  --text-xs:    12px;   /* fine print */
+  --lh-body:    1.6;  /* @kind other */
+  --lh-relaxed: 1.75; /* @kind other */
+
+  /* ── Label / eyebrow (uppercase tag text) ─────── */
+  --text-label:  11px;
+  --track-label: 0.14em;
+}
