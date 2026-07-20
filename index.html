@@ -146,6 +146,7 @@
     width: 38px; height: 38px; flex-shrink: 0; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-display); font-weight: 700; font-size: 14px; color: #fff;
+    object-fit: cover; object-position: center top;
   }
   .m-name { flex: 1; font-weight: 600; font-size: 15px; }
   .m-cta { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--forest-400); }
@@ -203,9 +204,9 @@
   <p class="bio" data-reveal>Pecuarista, empresário e educador. Ensino o produtor a tratar a fazenda como <b>empresa</b> e decidir com base em <b>números</b>.</p>
 
   <div class="social">
-    <a href="#" aria-label="Instagram" data-reveal><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-    <a href="#" aria-label="YouTube" data-reveal><svg viewBox="0 0 24 24"><path d="M22 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 5 12 5 12 5h0s-4.2 0-7.1.2c-.4 0-1.3 0-2.1.9C2.2 6.6 2 8 2 8s-.2 1.6-.2 3.3v1.5C1.8 14.4 2 16 2 16s.2 1.4.8 2c.8.8 1.8.8 2.3.9 1.7.2 6.9.2 6.9.2s4.2 0 7.1-.2c.4 0 1.3 0 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.5C22.2 9.6 22 8 22 8z"/><polygon points="10 9 15 12 10 15 10 9"/></svg></a>
-    <a href="#" aria-label="WhatsApp" data-reveal><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 8.8c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.5l-.4.5c-.1.1-.2.3-.1.5.2.4.6 1 1.1 1.5.6.5 1.1.7 1.5.9.2 0 .3 0 .5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.7c.2.1.4.2.4.4 0 .5-.2 1.2-.5 1.4-.3.2-1 .5-1.7.4-1-.1-2.4-.6-3.8-1.9-1.5-1.4-2-2.8-2.1-3.8 0-.6.1-1.2.5-1.7z"/></svg></a>
+    <a href="https://www.instagram.com/victordarido" target="_blank" rel="noopener" aria-label="Instagram" data-reveal><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    <a href="https://www.youtube.com/@victordarido" target="_blank" rel="noopener" aria-label="YouTube" data-reveal><svg viewBox="0 0 24 24"><path d="M22 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 5 12 5 12 5h0s-4.2 0-7.1.2c-.4 0-1.3 0-2.1.9C2.2 6.6 2 8 2 8s-.2 1.6-.2 3.3v1.5C1.8 14.4 2 16 2 16s.2 1.4.8 2c.8.8 1.8.8 2.3.9 1.7.2 6.9.2 6.9.2s4.2 0 7.1-.2c.4 0 1.3 0 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.5C22.2 9.6 22 8 22 8z"/><polygon points="10 9 15 12 10 15 10 9"/></svg></a>
+    <a href="https://www.tiktok.com/@victordarido" target="_blank" rel="noopener" aria-label="TikTok" data-reveal><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
   </div>
 
   <div class="sec-label" id="produtosLabel" data-reveal>Produtos</div>
@@ -229,7 +230,7 @@
       <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
     </a>
 
-    <a class="link-card" data-reveal="card" href="https://pay.hotmart.com/Y70471770N?off=5jndxdww&checkoutMode=10" target="_blank" rel="noopener">
+    <a class="link-card" data-reveal="card" style="display:none!important" href="https://pay.hotmart.com/Y70471770N?off=5jndxdww&checkoutMode=10" target="_blank" rel="noopener">
       <span class="lc-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
       <span class="lc-body">
         <span class="lc-name">Engorda Flexível</span>
@@ -238,7 +239,7 @@
       <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
     </a>
 
-    <a class="link-card" data-reveal="card" href="https://pay.hotmart.com/M95629821W?off=e4jtkb53&checkoutMode=10" target="_blank" rel="noopener">
+    <a class="link-card" data-reveal="card" style="display:none!important" href="https://pay.hotmart.com/M95629821W?off=e4jtkb53&checkoutMode=10" target="_blank" rel="noopener">
       <span class="lc-icon"><svg viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span>
       <span class="lc-body">
         <span class="lc-name">Manual do Boiadeiro</span>
@@ -247,7 +248,7 @@
       <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
     </a>
 
-    <a class="link-card" data-reveal="card" href="https://pay.hotmart.com/L103194037E?off=676tp1no&checkoutMode=10" target="_blank" rel="noopener">
+    <a class="link-card" data-reveal="card" style="display:none!important" href="https://pay.hotmart.com/L103194037E?off=676tp1no&checkoutMode=10" target="_blank" rel="noopener">
       <span class="lc-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></span>
       <span class="lc-body">
         <span class="lc-name">Gado Lucrativo</span>
@@ -256,7 +257,7 @@
       <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
     </a>
 
-    <a class="link-card" data-reveal="card" href="http://lp.victordarido.com.br/inscricoes-encerradas" target="_blank" rel="noopener">
+    <a class="link-card" data-reveal="card" style="display:none!important" href="http://lp.victordarido.com.br/inscricoes-encerradas" target="_blank" rel="noopener">
       <span class="lc-icon"><svg viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-2 1.5-4 1.5-6 0"/><path d="m2 16 3-8 3 8c-2 1.5-4 1.5-6 0"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>
       <span class="lc-body">
         <span class="lc-name">Jornada Pecuária Lucrativa <span class="pill-sdr">+ Protocolo SDR</span></span>
@@ -282,7 +283,7 @@
       <span class="lc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
       <span class="lc-body">
         <span class="lc-name">Falar com o time</span>
-        <span class="lc-desc">Deivid · Sabrina · Victor Hugo · Rodrigo · Camila · Matheus</span>
+        <span class="lc-desc">Sabrina · Matheus · Victor Hugo · Camila · Rodrigo · Deivid</span>
       </span>
       <span class="lc-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
     </div>
@@ -323,17 +324,16 @@
 
   /* ── Build the team members from a small data array ───────────────── */
   const TEAM = [
-    { name: 'Deivid',      url: '#', c1: '#0E9F6E', c2: '#064C34' },
-    { name: 'Sabrina',     url: '#', c1: '#E8B931', c2: '#B8860B' },
-    { name: 'Victor Hugo', url: '#', c1: '#16B87E', c2: '#0A7B54' },
-    { name: 'Rodrigo',     url: '#', c1: '#0E9F6E', c2: '#03261A' },
-    { name: 'Camila',      url: '#', c1: '#F5D062', c2: '#D4A017' },
-    { name: 'Matheus',     url: '#', c1: '#3DDBA0', c2: '#0E9F6E' },
+    { name: 'Sabrina',     photo: 'assets/images/team/sabrina.png',     url: 'https://api.whatsapp.com/send?phone=5531972088313&text=Quero%20tirar%20uma%20d%C3%BAvida', c1: '#E8B931', c2: '#B8860B' },
+    { name: 'Matheus',     photo: 'assets/images/team/matheus.png',     url: 'https://api.whatsapp.com/send?phone=5531953475342&text=Quero%20tirar%20uma%20d%C3%BAvida', c1: '#3DDBA0', c2: '#0E9F6E' },
+    { name: 'Victor Hugo', photo: 'assets/images/team/victor-hugo.png', url: 'https://api.whatsapp.com/send?phone=5531995008064&text=Quero%20tirar%20uma%20d%C3%BAvida',  c1: '#16B87E', c2: '#0A7B54' },
+    { name: 'Camila',      photo: 'assets/images/team/camila.png',      url: 'https://api.whatsapp.com/send?phone=5531953477164&text=Quero%20tirar%20uma%20d%C3%BAvida', c1: '#F5D062', c2: '#D4A017' },
+    { name: 'Rodrigo',     photo: 'assets/images/team/rodrigo.png',     url: 'https://api.whatsapp.com/send?phone=5531953476698&text=Quero%20tirar%20uma%20d%C3%BAvida', c1: '#0E9F6E', c2: '#03261A' },
+    { name: 'Deivid',      photo: 'assets/images/team/deivid.png',      url: 'https://api.whatsapp.com/send?phone=5511951336023&text=Quero%20tirar%20uma%20d%C3%BAvida', c1: '#0E9F6E', c2: '#064C34' },
   ];
-  const initials = (n) => n.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
   document.getElementById('teamGrid').innerHTML = TEAM.map(m => `
     <a class="member" href="${m.url}"${m.url !== '#' ? ' target="_blank" rel="noopener"' : ''}>
-      <span class="mono" style="background:linear-gradient(135deg, ${m.c1}, ${m.c2})">${initials(m.name)}</span>
+      <img class="mono" src="${m.photo}" alt="" loading="lazy" style="background:linear-gradient(135deg, ${m.c1}, ${m.c2})">
       <span class="m-name">${m.name}</span>
       <span class="m-cta">Falar
         <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg>
